@@ -14,9 +14,7 @@ class PuzzleOne
 
     adjusted_input = []
     input.each_with_index do |val, index|
-      if input[index + 1] && input[index + 2]
-        adjusted_input.push(val + input[index + 1] + input[index + 2])
-      end
+      adjusted_input.push(val + input[index + 1] + input[index + 2]) if input[index + 1] && input[index + 2]
     end
     return PuzzleOne.increased_value(adjusted_input)
   end
