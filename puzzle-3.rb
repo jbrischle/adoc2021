@@ -67,7 +67,3 @@ class PuzzleThree
     (value.chars.map(&:to_i).sum.to_f / value.length).round
   end
 end
-
-input = File.readlines('puzzle-3-data.txt')
-puts "Answer part 1: #{PuzzleThree.method_one(input)}"
-puts "Answer part 2: #{PuzzleThree.method_two(input)}"

@@ -18,7 +18,7 @@ class PuzzleTwo
         puts 'no matching command'
       end
     end
-    return horizontal * depth
+    horizontal * depth
   end
 
   def self.method_two(input)
@@ -43,10 +43,7 @@ class PuzzleTwo
       end
     end
 
-    return horizontal * depth
+    horizontal * depth
   end
 end
 
-input = File.readlines('puzzle-2-data.txt')
-puts "Answer part 1: #{PuzzleTwo.method_one(input)}"
-puts "Answer part 2: #{PuzzleTwo.method_two(input)}"

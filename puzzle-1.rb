@@ -4,9 +4,11 @@ class PuzzleOne
 
     increased_count = 0
     input.each_with_index do |val, index|
-      increased_count += 1 if input[index + 1] && (input[index + 1] - val).positive?
+      var = input[index + 1].to_i
+      positive_ = (var - val.to_i).positive?
+      increased_count += 1 if var && positive_
     end
-    return increased_count
+    increased_count
   end
 
   def self.increased_value_sliding_window(input)
@@ -16,10 +18,6 @@ class PuzzleOne
     input.each_with_index do |val, index|
       adjusted_input.push(val + input[index + 1] + input[index + 2]) if input[index + 1] && input[index + 2]
     end
-    return PuzzleOne.increased_value(adjusted_input)
+    increased_value(adjusted_input)
   end
 end
-
-input = File.readlines('puzzle-1-data.txt').map(&:to_i)
-puts "Answer part 1: #{PuzzleOne.increased_value(input)}"
-puts "Answer part 2: #{PuzzleOne.increased_value_sliding_window(input)}"

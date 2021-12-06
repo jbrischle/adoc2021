@@ -26,4 +26,21 @@ class PuzzleTwoTest < Test::Unit::TestCase
     ]
     assert_equal 900, PuzzleTwo.method_two(input)
   end
+
+  def test_part_one_real
+    input = File.readlines('puzzle-2-data.txt')
+    value = PuzzleTwo.method_one(input)
+
+    puts "Answer part 1: #{value}"
+    assert_equal 1484118, value
+  end
+
+  def test_part_two_real
+    input = File.readlines('puzzle-2-data.txt')
+    value = PuzzleTwo.method_two(input)
+
+    puts "Answer part 1: #{value}"
+    assert_equal 1463827010, value
+  end
+
 end
