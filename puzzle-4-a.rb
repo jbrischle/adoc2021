@@ -10,10 +10,8 @@ class PuzzleFourA
     drawn_numbers.each do |drawn_number|
       boards.each do |board_key, board|
         boards[board_key] = stamp_board(board, drawn_number)
-        bingo = check_bingo(board)
-        if bingo
-          sum_up_unmarked_values = sum_up_unmarked_values(board)
-          return sum_up_unmarked_values * drawn_number
+        if check_bingo(board)
+          return sum_up_unmarked_values(board) * drawn_number
         end
       end
     end
